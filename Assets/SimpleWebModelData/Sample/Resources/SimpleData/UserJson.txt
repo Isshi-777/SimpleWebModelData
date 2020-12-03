@@ -1,5 +1,5 @@
 {
    "id" : 1234,
-   "name" : "ƒ†[ƒU[",
+   "name" : "TestUser",
    "lv" : 15
 }
