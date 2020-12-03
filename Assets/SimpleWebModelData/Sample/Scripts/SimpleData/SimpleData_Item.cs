@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 
 /// <summary>
-/// サンプル用の「アイテム情報」のデータ
+/// 単純なデータ「アイテム情報」のデータ
 /// </summary>
 public class SimpleData_Item : AWebModelData
 {
