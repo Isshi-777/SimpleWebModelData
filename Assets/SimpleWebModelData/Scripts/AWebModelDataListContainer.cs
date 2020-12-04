@@ -97,6 +97,16 @@ public abstract class AWebModelDataListContainer<T> : AJsonModelData where T : A
     }
 
     /// <summary>
+    /// データリストのリフレッシュ（全部削除して、その後にJsonのデータを追加）
+    /// </summary>
+    /// <param name="json">Jsonテキスト</param>
+    public void RefreshDataList(string json)
+    {
+        this.Clear();
+        this.UpdateDataList(json);
+    }
+
+    /// <summary>
     /// PrimaryKeyが一致しているデータを返す
     /// </summary>
     /// <param name="primaryKey">PrimaryKey</param>
