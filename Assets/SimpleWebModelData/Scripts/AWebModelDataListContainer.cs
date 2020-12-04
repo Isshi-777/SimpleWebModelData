@@ -18,7 +18,7 @@ public abstract class AWebModelDataListContainer<T> : AJsonModelData where T : A
     /// <summary>
     /// 識別のKey
     /// </summary>
-    public abstract WebModelDataConstants.EDataIndifinitionKey DifinitionKey { get; }
+    public abstract WebModelDataConstants.EDataIdentificationKey IdentificationKey { get; }
 
     /// <summary>
     /// Jsonによるデータリストの更新

@@ -9,7 +9,7 @@ public static class WebModelDataConstants
     /// <summary>
     /// 識別名を指すKeyの列挙
     /// </summary>
-    public enum EDataIndifinitionKey
+    public enum EDataIdentificationKey
     {
         // MasterData
 
@@ -21,7 +21,7 @@ public static class WebModelDataConstants
     /// <summary>
     /// 識別名のDictionary
     /// </summary>
-    private static readonly Dictionary<EDataIndifinitionKey, string> IndifinitionNameDic = new Dictionary<EDataIndifinitionKey, string>()
+    private static readonly Dictionary<EDataIdentificationKey, string> IdentificationNameDic = new Dictionary<EDataIdentificationKey, string>()
     {
         // MasterData
 
@@ -35,10 +35,10 @@ public static class WebModelDataConstants
     /// </summary>
     /// <param name="key">識別名を指すKey</param>
     /// <returns>識別名</returns>
-    public static string GetIndifinitionName(EDataIndifinitionKey key)
+    public static string GetIndifinitionName(EDataIdentificationKey key)
     {
         string result = string.Empty;
-        if (!IndifinitionNameDic.TryGetValue(key, out result))
+        if (!IdentificationNameDic.TryGetValue(key, out result))
         {
             Debug.LogError(" Inidifinition name is not found !!! " + key);
         }
