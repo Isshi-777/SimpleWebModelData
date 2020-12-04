@@ -11,7 +11,8 @@ public static class WebModelDataConstants
     /// </summary>
     public enum EDataIdentificationKey
     {
-        // MasterData
+        // MasterData（マスターデータはテーブルごとにJsonを用意する場合は１つで大丈夫、1つのJsonに全マスタを含める場合は個別に定義）
+        MasterData_Common,
 
         // UserData
 
@@ -23,7 +24,8 @@ public static class WebModelDataConstants
     /// </summary>
     private static readonly Dictionary<EDataIdentificationKey, string> IdentificationNameDic = new Dictionary<EDataIdentificationKey, string>()
     {
-        // MasterData
+        // MasterData（マスターデータはテーブルごとにJsonを用意する場合は識別名は不要、1つのJsonに全マスタを含める場合は個別に定義）
+        { EDataIdentificationKey.MasterData_Common, "" },
 
         // UserData
 
