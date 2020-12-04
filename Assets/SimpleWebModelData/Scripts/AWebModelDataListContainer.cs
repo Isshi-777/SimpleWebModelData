@@ -21,6 +21,11 @@ public abstract class AWebModelDataListContainer<T> : AJsonModelData where T : A
     public abstract WebModelDataConstants.EDataIdentificationKey IdentificationKey { get; }
 
     /// <summary>
+    /// 識別名
+    /// </summary>
+    public string IdentificationName => WebModelDataConstants.GetIndifinitionName(this.IdentificationKey);
+
+    /// <summary>
     /// Jsonによるデータリストの更新
     /// </summary>
     /// <param name="json">Jsonデータ</param>
