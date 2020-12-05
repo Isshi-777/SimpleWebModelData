@@ -26,5 +26,5 @@ public class SimpleData_User : AWebModelData
     /// <summary>
     /// PrimaryKey（ユーザーID）
     /// </summary>
-    public override string PrimaryKey => UserId.ToString();
+    public override string PrimaryKey => WebModelDataHelper.GeneratePrimaryKey(this.UserId.ToString());
 }

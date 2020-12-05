@@ -20,5 +20,5 @@ public class SimpleData_Item : AWebModelData
     /// <summary>
     /// PrimaryKey（アイテムID）
     /// </summary>
-    public override string PrimaryKey => this.Id.ToString();
+    public override string PrimaryKey => WebModelDataHelper.GeneratePrimaryKey(this.Id.ToString());
 }
