@@ -1,10 +1,12 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
 /// データリストのコンテナの基底クラス
 /// ※継承してプロパティは増やせるが、基本的にマスターデータなど１つの配列のみを管理するクラスの基底クラス
+/// 　(継承により増やしたJsonPropertyの値のクラス内での更新処理は自前で書く必要あり)
 /// </summary>
 /// <typeparam name="T">AWebModelData</typeparam>
 public abstract class AWebModelDataListContainer<T> : AJsonModelData where T : AWebModelData
@@ -26,7 +28,7 @@ public abstract class AWebModelDataListContainer<T> : AJsonModelData where T : A
     public string IdentificationName => WebModelDataConstants.GetIndifinitionName(this.IdentificationKey);
 
     /// <summary>
-    /// Jsonによるデータリストの更新
+    /// Jsonによるデータリストの更新 (「dataList」変数の更新のみ)
     /// </summary>
     /// <param name="json">Jsonデータ</param>
     public void UpdateDataList(string json)
@@ -37,13 +39,30 @@ public abstract class AWebModelDataListContainer<T> : AJsonModelData where T : A
             return;
         }
 
-        List<T> list = JsonConvert.DeserializeObject<List<T>>(json);
-        if (list != null)
+        // JsonPropertyが「仕組み上増やせる」のでDictionary<string, List<T>>へのデシリアライズではなくJObjectを使用
+        JToken token;
+        JObject jo = JObject.Parse(json);
+        if (jo != null && jo.TryGetValue("data", out token))
         {
-            foreach (var data in list)
+            var list = token.ToObject<List<T>>();
+            if (list != null)
             {
-                this.UpdateData(data);
+                if (list != null)
+                {
+                    foreach (var data in list)
+                    {
+                        this.UpdateData(data);
+                    }
+                }
             }
+            else
+            {
+                Debug.LogWarning(" \"data\" value type is not " + typeof(List<T>));
+            }
+        }
+        else
+        {
+            Debug.LogWarning(" \"data\" colummn is not found !!! \n" + json);
         }
     }
 
