@@ -9,13 +9,13 @@ public class SimpleDataScene : MonoBehaviour
     private void Start()
     {
         // ユーザーデータ
-        TextAsset userJson = Resources.Load<TextAsset>("SimpleData/UserJson");
+        TextAsset userJson = Resources.Load<TextAsset>("UserJson");
         SimpleData_User userData = JsonConvert.DeserializeObject<SimpleData_User>(userJson.text);
 
         // アイテムデータ
-        TextAsset itemJson = Resources.Load<TextAsset>("SimpleData/ItemJson");
+        TextAsset itemJson = Resources.Load<TextAsset>("ItemJson");
         SimpleData_Item itemData = JsonConvert.DeserializeObject<SimpleData_Item>(itemJson.text);
 
-        Debug.Log(userData + " : " + itemData);
+        Debug.Log("complete !!!");
     }
 }

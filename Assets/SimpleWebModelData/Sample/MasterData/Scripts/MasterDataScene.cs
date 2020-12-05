@@ -10,16 +10,14 @@ public class MasterDataScene : MonoBehaviour
     {
         // アイテムマスターデータ
         MasterDataTable_Item itemTable = new MasterDataTable_Item();
-        string url = "MasterData/" + itemTable.TableName;
-        TextAsset json = Resources.Load<TextAsset>(url);
+        TextAsset json = Resources.Load<TextAsset>(itemTable.TableName);
 
         MasterDataTable_Item itemtTable2 = JsonConvert.DeserializeObject<MasterDataTable_Item>(json.text);
         itemTable.UpdateDataList(json.text);
 
         // クエストマスターデータ
         MasterDataTable_Quest questTable = new MasterDataTable_Quest();
-        string url2 = "MasterData/" + questTable.TableName;
-        TextAsset json2 = Resources.Load<TextAsset>(url2);
+        TextAsset json2 = Resources.Load<TextAsset>(questTable.TableName);
 
         MasterDataTable_Quest questTable2 = JsonConvert.DeserializeObject<MasterDataTable_Quest>(json2.text);
         questTable.UpdateDataList(json2.text);
