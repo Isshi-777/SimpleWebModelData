@@ -11,19 +11,19 @@ public class MasterDataScene : MonoBehaviour
     {
         // アイテムマスターデータ
         MasterDataTable_Item itemTable = new MasterDataTable_Item();
-        MasterDataTable_Item itemtTable2 = null;
+        MasterDataTable_Item itemTable2 = null;
         yield return SampleApiManager.GetInstance().ConnectApi(itemTable.TableName,
             (json) =>
             {
                 itemTable.UpdateDataList(json);
-                itemtTable2 = JsonConvert.DeserializeObject<MasterDataTable_Item>(json);
+                itemTable2 = JsonConvert.DeserializeObject<MasterDataTable_Item>(json);
             });
 
         Debug.Log("Serialize ItemTable");
         Debug.Log(JsonConvert.SerializeObject(itemTable));
         Debug.Log(itemTable.ToJson());
-        Debug.Log(JsonConvert.SerializeObject(itemtTable2));
-        Debug.Log(itemtTable2.ToJson());
+        Debug.Log(JsonConvert.SerializeObject(itemTable2));
+        Debug.Log(itemTable2.ToJson());
 
 
         // クエストマスターデータ
