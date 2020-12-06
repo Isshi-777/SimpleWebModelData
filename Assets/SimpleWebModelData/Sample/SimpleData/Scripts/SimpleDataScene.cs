@@ -17,6 +17,10 @@ public class SimpleDataScene : MonoBehaviour
                 userData = JsonConvert.DeserializeObject<SimpleData_User>(json);
             });
 
+        Debug.Log("Serialize UserData");
+        Debug.Log(JsonConvert.SerializeObject(userData));
+        Debug.Log(userData.ToJson());
+
         // アイテムデータ
         SimpleData_Item itemData = null;
         yield return SampleApiManager.GetInstance().ConnectApi("ItemJson",
@@ -24,6 +28,10 @@ public class SimpleDataScene : MonoBehaviour
             {
                 itemData = JsonConvert.DeserializeObject<SimpleData_Item>(json);
             });
+
+        Debug.Log("Serialize ItemData");
+        Debug.Log(JsonConvert.SerializeObject(itemData));
+        Debug.Log(itemData.ToJson());
 
         Debug.Log("complete !!!");
     }

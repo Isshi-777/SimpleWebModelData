@@ -19,6 +19,12 @@ public class MasterDataScene : MonoBehaviour
                 itemtTable2 = JsonConvert.DeserializeObject<MasterDataTable_Item>(json);
             });
 
+        Debug.Log("Serialize ItemTable");
+        Debug.Log(JsonConvert.SerializeObject(itemTable));
+        Debug.Log(itemTable.ToJson());
+        Debug.Log(JsonConvert.SerializeObject(itemtTable2));
+        Debug.Log(itemtTable2.ToJson());
+
 
         // クエストマスターデータ
         MasterDataTable_Quest questTable = new MasterDataTable_Quest();
@@ -29,6 +35,12 @@ public class MasterDataScene : MonoBehaviour
                questTable.UpdateDataList(json);
                questTable2 = JsonConvert.DeserializeObject<MasterDataTable_Quest>(json);
            });
+
+        Debug.Log("Serialize QuestTable");
+        Debug.Log(JsonConvert.SerializeObject(questTable));
+        Debug.Log(questTable.ToJson());
+        Debug.Log(JsonConvert.SerializeObject(questTable2));
+        Debug.Log(questTable2.ToJson());
 
         // 簡単なクエストのみ取得
         var easyQuestList = questTable.GetEasyQuestList();
