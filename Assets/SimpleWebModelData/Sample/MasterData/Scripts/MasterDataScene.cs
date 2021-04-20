@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
 
 /// <summary>
 /// マスターデータの挙動テスト

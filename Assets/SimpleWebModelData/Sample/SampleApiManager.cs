@@ -1,9 +1,7 @@
-﻿
-// API通信ではなくローカルのファイルを読み込む
+﻿// API通信ではなくローカルのファイルを読み込む
 #define LOAD_LOCAL_FILE
 
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 
