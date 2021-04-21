@@ -9,6 +9,19 @@ public class SimpleDataScene : MonoBehaviour
 {
     private IEnumerator Start()
     {
+        // テストデータ
+        SimpleData_Test testData = null;
+        yield return SampleApiManager.GetInstance().ConnectApi("TestJson",
+            (json) =>
+            {
+                testData = JsonConvert.DeserializeObject<SimpleData_Test>(json);
+            });
+
+        Debug.Log("Serialize TestData");
+        Debug.Log(JsonConvert.SerializeObject(testData));
+        Debug.Log(testData.ToJson());
+
+
         // ユーザーデータ
         SimpleData_User userData = null;
         yield return SampleApiManager.GetInstance().ConnectApi("UserJson",
