@@ -1,0 +1,15 @@
+{
+   "intVal" : 1234,
+   "longVal" : 12345678910,
+   "floatVal" : 1234.5,
+   "boolVal" : true,
+   "stringVal" : "Hello !!!",
+   "intArrayVal" : [1,2,3,4,5],
+   "stringListVal" : ["apple", "Banana", "Orange"],
+   "item" : {"id": 1, "name": "testItem"},
+   "itemDic" : {
+   "a" : {"id": 1, "name": "ItemA"},
+   "b" : {"id": 2, "name": "ItemB"},
+   "c" : {"id": 3, "name": "ItemC"}
+   }
+}
