@@ -1,12 +1,11 @@
 # SimpleWebModelDataProject
 
 ## 概要
-Json.Netを使用しての簡単なWebModelDataのサンプル  
+Json.Netを使用しての簡単なWebModelDataのサンプル（MessagePack for C#はまた別で）  
 ※「WebModelData」 => 主にAPIのレスポンスで降ってくる情報やマスターデータなどのこと
 
 ## 目的
-これまで、クライアント/サーバー・モデルでは基本的にサーバーから降ってきたデータはreadonlyであることがほぼだった。  
-だいたいはデータのクラスを作成しJsonをデシリアライズして使用していたが、データクラスの変数のアクセス修飾子や変数名に対して思うことがあった。  
+サーバーから降ってきたデータなど指定のデータはreadonlyであることを保証したい 
   
 例  
 ```C#
